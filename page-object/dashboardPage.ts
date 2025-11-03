@@ -60,7 +60,7 @@ export class DemoStoreDashboardPage{
         this.cartProductsSummaryLabel = this.demoShopDashboardIframe.locator('.cart-summary-line').locator(':text("item")')
         this.allProductLinkOnMobile = this.demoShopDashboardIframe.getByText('   All products')
         this.productCategoryMenuOnMobile = this.demoShopDashboardIframe.locator('.category-top-menu .category-sub-menu')
-        this.breadcrumbHomeButton = this.demoShopDashboardIframe.locator('.breadcrumb').getByText('Home')
+        this.breadcrumbHomeButton = this.demoShopDashboardIframe.locator('.breadcrumb').getByText('Home').first()
         this.checkoutButtonInCart = this.demoShopDashboardIframe.locator('.cart-summary').getByRole('link')
         this.personalInformationSectionInCheckout = this.demoShopDashboardIframe.locator('section#checkout-personal-information-step')
         this.firstNameFieldInPersonalInformationSectionInCheckout = this.personalInformationSectionInCheckout.locator('input[name="firstname"]')
@@ -154,9 +154,9 @@ export class DemoStoreDashboardPage{
 
         // Find and click on ADD TO CART button for selected product (mobile).
         // Wait for the button to become visible in this product context.
+        await this.addToCartButtonForSelectedProduct.waitFor({ state: 'visible', timeout: 7000 })
         // Optionally, scroll into view
         await this.addToCartButtonForSelectedProduct.scrollIntoViewIfNeeded();
-        await this.addToCartButtonForSelectedProduct.waitFor({ state: 'visible', timeout: 7000 })
         await this.addToCartButtonForSelectedProduct.click()
 
         // Ensure the 'product Added to Cart' dialog modal is visible inside the iframe
