@@ -1,0 +1,28 @@
+{
+  "name": "takehome-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "appDesktopTestUI-chrome": "playwright test prestashopTest.spec.ts --project=chromium --ui",
+    "appDesktopTestUI-firefox": "playwright test prestashopTest.spec.ts --project=firefox --ui",
+    "appDesktopTestUI-safari": "playwright test prestashopTest.spec.ts --project=webkit --ui",
+    "appDesktopTestUI-all": "npm run appDesktopTestUI-chrome && npm run appDesktopTestUI-firefox && npm run appDesktopTestUI-safari",
+    "appMobileTestUI": "playwright test prestashopTestMobile.spec.ts --project=mobile --ui",
+    "appDesktopTestHeadless-chrome": "playwright test prestashopTest.spec.ts --project=chromium",
+    "appDesktopTestHeadless-firefox": "playwright test prestashopTest.spec.ts --project=firefox",
+    "appDesktopTestHeadless-safari": "playwright test prestashopTest.spec.ts --project=webkit",
+    "appDesktopTestHeadless-all": "npm run appDesktopTestHeadless-chrome && npm run appDesktopTestHeadless-firefox && npm run appDesktopTestHeadless-safari",
+    "appMobileTestHeadless": "playwright test prestashopTestMobile.spec.ts --project=mobile"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.9.2",
+    "dotenv": "^17.2.3"
+  }
+}
