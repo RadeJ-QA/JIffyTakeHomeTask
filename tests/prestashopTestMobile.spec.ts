@@ -52,7 +52,7 @@ test('add more than one product to the cart on mobile device', async ({page})=>{
 
 test('place an order from the cart on mobile device', async ({page})=>{
     const navigateTo = new DemoStoreDashboardPage(page)
-    let productCategory = 'Accessories'
+    let productCategory = 'Art'
     const randomFirstName = faker.person.firstName()
     const randomLastName = faker.person.lastName()
     const randomEmail = `${randomFirstName}.${randomLastName}${faker.number.int(100)}@test.com`
